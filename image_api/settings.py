@@ -45,14 +45,12 @@ INSTALLED_APPS = [
 
     # installed apps 
     'rest_framework',
-    'corsheaders',
 
     # internal apps
     "orders"
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -151,23 +149,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #         'rest_framework.permissions.IsAuthenticated'
 #     ],
 # }
-
-# CORS Settings
-CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[])
-
-CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[])
-
-if DEBUG:
-    CORS_ALLOWED_ORIGINS += ["http://localhost:3000",
-                             "https://localhost:3000",
-                             ]
-
-    CSRF_TRUSTED_ORIGINS += ['http://localhost:8000']
-
-# CORS_EXPOSE_HEADERS = [
-#     "Content-Disposition",
-# ]
-
-CORS_ALLOW_CREDENTIALS = True
-
 
