@@ -30,7 +30,7 @@ SECRET_KEY = env("SECRET_KEY", default=get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG", default=False)
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS") if DEBUG else [] 
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS") if not DEBUG else [] 
 
 
 # Application definition
