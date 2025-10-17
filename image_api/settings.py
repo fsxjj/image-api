@@ -45,13 +45,14 @@ INSTALLED_APPS = [
 
     # installed apps 
     'rest_framework',
+    'corsheaders',
 
     # internal apps
     "orders"
 ]
 
 MIDDLEWARE = [
-    # 'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -160,3 +161,6 @@ if DEBUG:
 
 # Whitenoise config
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# CORS Settings
+CORS_ALLOW_ALL_ORIGINS = True
